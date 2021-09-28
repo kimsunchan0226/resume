@@ -5,27 +5,29 @@ $('html, body').stop().animate({
 
 $('#menu li').eq(0).addClass('on')
 var cflag = false;
-$('#menu li a').on('click focus', function(e){
+$('#menu li a, .depth1 li a, .openlist li a').on('click focus', function(e){
     e.preventDefault()
+    $('.open').removeClass('on')
     cflag = true;
     $(this).parent().addClass('on')
     $(this).parent().siblings().removeClass('on')
-    var num = $(this).parent().index()
+    var num = $(this).parent().index()+1
     var secDist = $('section').eq(num).offset().left
     $('html, body').stop().animate({
         scrollLeft : secDist
     }, 1000, function(){
-        cflag = false
-    })
+        cflag = false 
+    }) 
 })
 
-
-var sDist0 = $('#sect1').offset().left
+// 왼쪽 끝에서부터 해당sect 까지 떨어진 해당 거리값
+var sDist0 = $('#sect1').offset().left 
 var sDist1 = $('#sect2').offset().left
 var sDist2 = $('#sect3').offset().left
+var sDist3 = $('#sect4').offset().left
 
 // 마지막구간이 윈도우높이보다 클때
-var lastSect = $('#sect4').offset().left            
+var lastSect = $('#sect5').offset().left            
 
 var sct=0;
 $(window).on('scroll', function(){
@@ -45,20 +47,59 @@ $(window).on('scroll', function(){
     } else if ( sct>=lastSect && !cflag) {
         $('#menu li').eq(3).addClass('on')
         $('#menu li').eq(3).siblings().removeClass('on')
+        $('#sect4').addClass('on')
     } 
 
 })
 
 
+// sect2 카드 뒤집기
+$('#sect2 .cbtn').on('click', function(){
+    if (!$('#sect2 .card').hasClass('on')) {
+        $('#sect2 .card').addClass('on')
+    } else {
+        $('#sect2 .card').removeClass('on')
+    }
+})
+
+function count(jumsu, cname, time) {
+    let num = 0; 
+    var stop = setInterval(function(){
+        num++;
+        if (num<=jumsu) {
+            $(cname).find('.score').css({ height:num+'%', transition:'all 0s' })
+            $(cname).find('.myscore').text(num+'%')
+        } else {
+            clearInterval(stop)
+            $(cname).find('.score').css({ transition:'all 1s' })
+        }
+    }, time)
+}
+
+$('#sect3 .cbtn').on('click', function(){
+    $(this).prev().fadeIn(300)
+    $('.skillContainer').addClass('on')
+    count(80, '.html',15)
+    count(70, '.css',16)
+    count(50, '.script',17)
+    count(40, '.jquery',18)
+    count(60, '.react',19) 
+})
+
+$('#sect3 .skillOuter').on('click',function(){
+    $(this).fadeOut()
+    $('.skillContainer').removeClass('on')
+})
+
 $('section').on('mousewheel', function(event, delta){
     if (delta>0) {    // 마우스휠을 위로 굴리면 양수
         $('html, body').stop().animate({
             scrollLeft: $(this).prev().offset().left
-        }, 600)
+        }, 1000)
     } else if (delta<0) {  // 마우스휠을 아래로 굴리면 음수
         $('html, body').stop().animate({
             scrollLeft: $(this).next().offset().left
-        }, 600)
+        }, 1000)
     }
 })
 

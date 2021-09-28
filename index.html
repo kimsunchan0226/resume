@@ -27,12 +27,12 @@
 	<span class="blind">메뉴열기</span>
 </div>
 
-<div class="openlist">
+<div class="openlist"> 
 	<ul>
-		<li><a href="#">프로젝트</a></li>
-		<li><a href="#">About 소이정</a></li>
-		<li><a href="#">Contact Us</a></li>
-		<li><a href="#">일상이야기</a></li>
+		<li><a href="#">About Me</a></li>
+		<li><a href="#">My Skills</a></li>
+		<li><a href="#">My portfolio</a></li>
+		<li><a href="#">Contact Me</a></li>
 	</ul>
 </div>
 
@@ -46,9 +46,7 @@
 
 <!-- sns -->
 <ul id="sns">
-	<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-	<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-	<li><a href="#"><i class="fas fa-envelope"></i></a></li>
+	<li><a href="https://www.instagram.com/sunchan0226/" target="block"><i class="fab fa-instagram"></i></a></li>
 </ul>
 
 <!-- 전체 페이지 -->
@@ -72,70 +70,73 @@
 	</section>
 	
 	<!-- 두 번째 박스 -->
+	<!-- 0706 응용 -->
 	<section id="sect2">
-	<div class="mebox">
-		<div class="card">
-			<div class="card1">
-				<img src="./img/KakaoTalk_20210812_175217345.jpg" alt="">
-				<ul>
-					<li>김 선 찬</li>
-					<li>1997.02.26</li>
-					<li>성남시 분당구 거주</li>
-					<li>010-3680-8016</li>
-					<li>isfp</li>
-				</ul>
-			</div>
-			<div class="card2">
-				<h3>인적사항</h3>
-				<p>2012. 02 야탑고등학교 졸업</p> 
-				<p>2019. 02 동원대학교 소방안전관리과 졸업</p>
-				<p>2019. 11 ~ 2021. 02 소방점검업체 근무</p>
-				<p>2021. 05 ~ 2021. 11 프론트앤드개발자 과정</p>
+		<div class="mebox">
+			<div class="card">
+				<div class="card1">
+					<img src="./img/KakaoTalk_20210812_175217345.jpg" alt="">
+					<ul>
+						<li>김 선 찬</li>
+						<li>1997.02.26</li>
+						<li>성남시 분당구 거주</li>
+						<li>010-3680-8016</li>
+						<li>isfp</li>
+					</ul>
+				</div>
+				<div class="card2">
+					<h3>인적사항</h3>
+					<p>2012. 02 야탑고등학교 졸업</p> 
+					<p>2019. 02 동원대학교 소방안전관리과 졸업</p>
+					<p>2019. 11 ~ 2021. 02 소방점검업체 근무</p>
+					<p>2021. 05 ~ 2021. 11 프론트앤드개발자 과정</p>
+				</div>
 			</div>
 			<div class="cbtn">
-				<span>클릭!</span>
+				<span>click!</span>
 			</div>
 		</div>
-		<!--클릭을 누르면 한 바퀴 돌면서 card1에서 card2로 바뀌는거 하고싶어요  -->
-	</div>
-	</section>
+		</section>
+	
 	
 	<!-- 세 번째 박스 -->
 	<section id="sect3">
-		<div class="skillContainer">
-			<div class="html">
-				<div class="score">
-					<div class="myscore"></div>
+		<div class="skillOuter">
+			<div class="skillContainer">
+				<div class="html">
+					<div class="score">
+						<div class="myscore">0</div>  
+					</div>
+					<p>HTML5</p>
 				</div>
-				<p>HTML5</p>
-			</div>
-			<div class="css">
-				<div class="score">
-					<div class="myscore"></div>
+				<div class="css">
+					<div class="score">
+						<div class="myscore">0</div>
+					</div>
+					<p>CSS3</p>
 				</div>
-				<p>CSS3</p>
-			</div>
-			<div class="script">
-				<div class="score">
-					<div class="myscore"></div>
+				<div class="script">
+					<div class="score">
+						<div class="myscore">0</div>
+					</div>
+					<p>javaScript</p>
 				</div>
-				<p>javaScript</p>
-			</div>
-			<div class="jquery">
-				<div class="score">
-					<div class="myscore"></div>
+				<div class="jquery">
+					<div class="score">
+						<div class="myscore">0</div>
+					</div>
+					<p>jQuery</p>
 				</div>
-				<p>jQuery</p>
-			</div>
-			<div class="react">
-				<div class="score">
-					<div class="myscore"></div>
+				<div class="react">
+					<div class="score">
+						<div class="myscore">0</div>
+					</div>
+					<p>React</p>
 				</div>
-				<p>React</p>
 			</div>
-			<div class="cbtn">
-				<span>클릭!</span>
-			</div>
+		</div>
+		<div class="cbtn">
+			<span>click!</span>
 		</div>
 		<!-- 클릭을 누르면 팝업창 뜨면서 스킬 그래프가 나오게 하고싶어요 -->
 	</section>
@@ -157,7 +158,44 @@
 	<!-- 다섯 번째 박스 -->
 	<!-- 이거를 어떻게 추가해야하는지 잘모르겠습니다. -->
 	<section id="sect5">
-	
+		<div class="formbox">
+			<form action="#" method="post">
+				<fieldset>
+					<legend class="blind">연락처를 남겨주세요.</legend>
+					<div class="left">
+						<p>
+							<label for="irum">성명</label>
+							<input type="text" id="irum">
+						</p>
+						<p>
+							<label for="eid">이메일</label>
+							<input type="text" id="email" name="eid"> @
+							<input type="text" name="edomain">
+						</p>
+						<p>
+							<label for="phone">연락처</label>
+							<input type="text" name="hp1" id="phone"> -
+							<input type="text" name="hp2"> -
+							<input type="text" name="hp3">
+						</p>
+					</div>
+					<div class="right">
+						<p>
+							<label for="file">첨부파일</label>
+							<input type="file">
+						</p>
+						<p>
+							<label for="memo">하고싶은말</label>
+							<textarea name="memo" id="memo"></textarea>
+						</p>
+					</div>
+				</fieldset>
+				<div class="btn">
+					<button type="submit">전송</button>
+					<button type="reset">취소</button>
+				</div>
+			</form>
+		</div>
 	</section>
 </div>
 
