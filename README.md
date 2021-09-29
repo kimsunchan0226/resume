@@ -1,3 +1,2 @@
 # swatch3
-
-https://oktobat.github.io/swatch3/
+https://kimsunchan0226.github.io/resume/
