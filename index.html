@@ -7,11 +7,11 @@
 	<title>kim sun chan</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 	<link rel="stylesheet" href="./css/reset.css">
-
 	<link rel="stylesheet" href="./css/index.css">
 	<script src="./js/jquery-1.12.4.min.js"></script>
 	<script src="./js/prefixfree.min.js"></script>
 	<script src="./js/jquery.mousewheel.min.js"></script>
+	<script src="./js/isotope.pkgd.min.js"></script>
 </head>
 <body>
 	
@@ -29,6 +29,7 @@
 
 <div class="openlist"> 
 	<ul>
+		<!-- 팝업 눌렀을시 나오는 메뉴 -->
 		<li><a href="#">About Me</a></li>
 		<li><a href="#">My Skills</a></li>
 		<li><a href="#">My portfolio</a></li>
@@ -38,6 +39,7 @@
 
 <!-- 주 메뉴 -->
 <ul id="menu">
+	<!-- 동그라미 메뉴  -->
 	<li><a href="#"><span>About Me</span></a></li> 
 	<li><a href="#"><span>My Skills</span></a></li>
 	<li><a href="#"><span>My portfolio</span></a></li>
@@ -66,7 +68,7 @@
 	<main id="main"> 
 		<h2>Welcome to my portfolio.</h2>
 	</main>
-	<div class="sk"><i class="fas fa-angle-double-right"></i></div> 
+
 	</section>
 	
 	<!-- 두 번째 박스 -->
@@ -77,12 +79,12 @@
 				<div class="card1">
 					<img src="./img/KakaoTalk_20210812_175217345.jpg" alt="">
 					<ul>
-						<li>김 선 찬</li>
-						<li>1997.02.26</li>
-						<li>성남시 분당구 거주</li>
-						<li>010-3680-8016</li>
-						<li>isfp</li>
-					</ul>
+						<li>Name : 김선찬</li>
+						<li>Birthday : 1997.02.26</li>
+						<li>Live : 성남시 분당구 거주</li>
+						<li>PH : 010-3680-8016</li>
+						<li>MBTI : 호기심 많은 예술가 isfp <img src="./img/mbti.jpg" alt=""></li>
+					</ul> 
 				</div>
 				<div class="card2">
 					<h3>인적사항</h3>
@@ -101,6 +103,7 @@
 	
 	<!-- 세 번째 박스 -->
 	<section id="sect3">
+		<h2>My Skill</h2> 
 		<div class="skillOuter">
 			<div class="skillContainer">
 				<div class="html">
@@ -138,25 +141,25 @@
 		<div class="cbtn">
 			<span>click!</span>
 		</div>
-		<!-- 클릭을 누르면 팝업창 뜨면서 스킬 그래프가 나오게 하고싶어요 -->
+		
 	</section>
 	
 	<!-- 네 번째 박스 -->
 	<section id="sect4">
 		<div class="category">
-			<a href="#">All</a>
-			<a href="#">반응형웹포폴</a>
-			<a href="#">React</a>
+			<a href="#" data-filter="*">All</a>
+			<a href="#" data-filter=".res">반응형웹포폴</a>
+			<a href="#" data-filter=".rea">React</a>
 		</div>
-		<ul>
-			<li><a href="http://www.naver.com"><img src="./img/E5wMZUTVoAAHKps.jpg" alt=""></a></li>
-			<li><a href="http://www.daum.net"><img src="./img/다운로드.jpg" alt=""></a></li>
-			<li><a href="http://www.google.com"><img src="./img/high-wallpapers-iphone-1.jpg" alt=""></a></li>
+		<ul class="grid">
+			<li class="all res"><a href="http://www.naver.com" ><img src="./img/E5wMZUTVoAAHKps.jpg" alt=""></a></li>
+			<li class="all rea"><a href="http://www.daum.net"><img src="./img/다운로드.jpg" alt=""></a></li>
+			<li class="all res"><a href="http://www.google.com"><img src="./img/high-wallpapers-iphone-1.jpg" alt=""></a></li>
 			
 		</ul>
 	</section>
 	<!-- 다섯 번째 박스 -->
-	<!-- 이거를 어떻게 추가해야하는지 잘모르겠습니다. -->
+
 	<section id="sect5">
 		<div class="formbox">
 			<form action="#" method="post">
@@ -197,6 +200,7 @@
 			</form>
 		</div>
 	</section>
+	<div class="sk"><i class="fas fa-angle-double-left"></i><i class="fas fa-angle-double-right"></i></div> 
 </div>
 
 <script src="./js/index.js"></script>

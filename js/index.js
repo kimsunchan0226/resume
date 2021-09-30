@@ -51,7 +51,27 @@ $(window).on('scroll', function(){
     } 
 
 })
-
+var clickcount = 0
+$('.sk i').eq(1).on('click', function(){
+    if (clickcount<$('#wrap>section').length-1) {
+        clickcount++
+        console.log(clickcount)
+        var moveright = $('#wrap>section').eq(clickcount).offset().left
+        $('html,body').animate({
+            scrollLeft:moveright
+        },500)
+    }
+})
+$('.sk i').eq(0).on('click', function(){
+    if (clickcount>0) {
+        clickcount--
+        console.log(clickcount)
+        var moveright = $('#wrap>section').eq(clickcount).offset().left
+        $('html,body').animate({
+            scrollLeft:moveright
+        },500)
+    }
+})
 
 // sect2 카드 뒤집기
 $('#sect2 .cbtn').on('click', function(){
@@ -61,7 +81,7 @@ $('#sect2 .cbtn').on('click', function(){
         $('#sect2 .card').removeClass('on')
     }
 })
-
+// sect3 
 function count(jumsu, cname, time) {
     let num = 0; 
     var stop = setInterval(function(){
@@ -272,4 +292,26 @@ $('body').on('click','.inlayer .prev',function(e){
         linum = 7
     }
    gallery(linum)
+})
+// isotope 플러그인 연결 (갤러리필터링)
+$(window).on("load", function(){
+    // skroll.recalcPosition();
+
+    $(".grid").isotope({
+       filter:"*",
+       layoutMode:'fitRows', // fitRows, masonry
+       itemSelector:'.all',
+   })
+
+
+
+})
+$('#sect4 .category a').on('click',function(){
+    var filterValue = $(this).attr('data-filter')
+    $('.grid').isotope({
+        filter:filterValue,
+        layoutMode:'fitRows', // fitRows, masonry
+        itemSelector:'.all',
+    })
+    return false
 })
