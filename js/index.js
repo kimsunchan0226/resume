@@ -25,32 +25,53 @@ var sDist0 = $('#sect1').offset().left
 var sDist1 = $('#sect2').offset().left
 var sDist2 = $('#sect3').offset().left
 var sDist3 = $('#sect4').offset().left
+var sDist4 = $('#sect5').offset().left
 
 // 마지막구간이 윈도우높이보다 클때
-var lastSect = $('#sect5').offset().left            
+var lastSect = $('#sect6').offset().left            
 
 var sct=0;
 $(window).on('scroll', function(){
     // var wh = $(this).height()
     sct = $(this).scrollLeft()
-    if ( sct>=sDist0 && sct<sDist1 && !cflag) {
-        $('#menu li').eq(0).addClass('on')
-        $('#menu li').eq(0).siblings().removeClass('on')
+    if ( sct>=sDist0 && sct<sDist1) {
         $('#menu').removeClass('on')
     } else if ( sct>=sDist1 && sct<sDist2 && !cflag) {
+        $('#menu li').eq(0).addClass('on')
+        $('#menu li').eq(0).siblings().removeClass('on')
+        $('#menu').addClass('on')
+    } else if ( sct>=sDist2 && sct<sDist3 && !cflag) {
         $('#menu li').eq(1).addClass('on')
         $('#menu li').eq(1).siblings().removeClass('on')
         $('#menu').addClass('on')
-    } else if ( sct>=sDist2 && sct<lastSect && !cflag) {
+    } else if ( sct>=sDist3 && sct<sDist4 && !cflag) {
         $('#menu li').eq(2).addClass('on')
         $('#menu li').eq(2).siblings().removeClass('on')
-    } else if ( sct>=lastSect && !cflag) {
+        $('#menu').addClass('on')
+    } else if ( sct>=sDist4 && sct<lastSect && !cflag ) {
         $('#menu li').eq(3).addClass('on')
         $('#menu li').eq(3).siblings().removeClass('on')
-        $('#sect4').addClass('on')
-    } 
+        $('#menu').addClass('on')
+    } else if ( sct>=lastSect ) {
+        $('#menu').removeClass('on')
+    }
 
 })
+
+
+$('section').on('mousewheel', function(event, delta){
+    if (delta>0) {    // 마우스휠을 위로 굴리면 양수
+        $('html, body').stop().animate({
+            scrollLeft: $(this).prev().offset().left
+        }, 1000)
+    } else if (delta<0) {  // 마우스휠을 아래로 굴리면 음수
+        $('html, body').stop().animate({
+            scrollLeft: $(this).next().offset().left
+        }, 1000)
+    }
+})
+
+
 var clickcount = 0
 $('.sk i').eq(1).on('click', function(){
     if (clickcount<$('#wrap>section').length-1) {
@@ -111,17 +132,7 @@ $('#sect3 .skillOuter').on('click',function(){
     $('.skillContainer').removeClass('on')
 })
 
-$('section').on('mousewheel', function(event, delta){
-    if (delta>0) {    // 마우스휠을 위로 굴리면 양수
-        $('html, body').stop().animate({
-            scrollLeft: $(this).prev().offset().left
-        }, 1000)
-    } else if (delta<0) {  // 마우스휠을 아래로 굴리면 음수
-        $('html, body').stop().animate({
-            scrollLeft: $(this).next().offset().left
-        }, 1000)
-    }
-})
+
 
 
 
@@ -299,7 +310,7 @@ $(window).on("load", function(){
 
     $(".grid").isotope({
        filter:"*",
-       layoutMode:'fitRows', // fitRows, masonry
+       layoutMode:'masonry', // fitRows, masonry
        itemSelector:'.all',
    })
 
@@ -310,8 +321,22 @@ $('#sect4 .category a').on('click',function(){
     var filterValue = $(this).attr('data-filter')
     $('.grid').isotope({
         filter:filterValue,
-        layoutMode:'fitRows', // fitRows, masonry
+        layoutMode:'masonry', // fitRows, masonry
         itemSelector:'.all',
     })
+    return false
+})
+
+$('#sect5 .formbox .btn button:first-child').on('click',function(){
+    $(this).css({
+        backgroundImage:'url(./img/csimg.png)',
+        backgroundRepeat:'no-repeat',
+        backgroundSize:'contain',
+        ainmation:'none'
+    })
+    $('html, body').delay(1000).animate({
+        scrollLeft:lastSect
+    }, 500)
+    
     return false
 })
