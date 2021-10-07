@@ -11,13 +11,17 @@ $('#menu li a, .depth1 li a, .openlist li a').on('click focus', function(e){
     cflag = true;
     $(this).parent().addClass('on')
     $(this).parent().siblings().removeClass('on')
+    
     var num = $(this).parent().index()+1
     var secDist = $('section').eq(num).offset().left
     $('html, body').stop().animate({
         scrollLeft : secDist
     }, 1000, function(){
         cflag = false 
-    }) 
+        $('.sk i').eq(0).show()
+        $('.sk i').eq(1).show() 
+    })
+    
 })
 
 // 왼쪽 끝에서부터 해당sect 까지 떨어진 해당 거리값
@@ -36,10 +40,12 @@ $(window).on('scroll', function(){
     sct = $(this).scrollLeft()
     if ( sct>=sDist0 && sct<sDist1) {
         $('#menu').removeClass('on')
+        $('.sk i').eq(0).hide()
     } else if ( sct>=sDist1 && sct<sDist2 && !cflag) {
         $('#menu li').eq(0).addClass('on')
         $('#menu li').eq(0).siblings().removeClass('on')
         $('#menu').addClass('on')
+        $('.sk i').eq(0).show()
     } else if ( sct>=sDist2 && sct<sDist3 && !cflag) {
         $('#menu li').eq(1).addClass('on')
         $('#menu li').eq(1).siblings().removeClass('on')
@@ -52,8 +58,10 @@ $(window).on('scroll', function(){
         $('#menu li').eq(3).addClass('on')
         $('#menu li').eq(3).siblings().removeClass('on')
         $('#menu').addClass('on')
+        $('.sk i').eq(1).show()
     } else if ( sct>=lastSect ) {
         $('#menu').removeClass('on')
+        $('.sk i').eq(1).hide()
     }
 
 })
@@ -71,7 +79,7 @@ $('section').on('mousewheel', function(event, delta){
     }
 })
 
-
+$('.sk i').eq(0).hide()
 var clickcount = 0
 $('.sk i').eq(1).on('click', function(){
     if (clickcount<$('#wrap>section').length-1) {
@@ -314,7 +322,8 @@ $(window).on("load", function(){
        itemSelector:'.all',
    })
 
-
+   
+   $('.lodoing').delay(3000).fadeOut()
 
 })
 $('#sect4 .category a').on('click',function(){
@@ -334,6 +343,7 @@ $('#sect5 .formbox .btn button:first-child').on('click',function(){
         backgroundSize:'contain',
         ainmation:'none'
     })
+    // 전송 버튼 누르면 옆으로 이동하는 애니메이션
     $('html, body').delay(1000).animate({
         scrollLeft:lastSect
     }, 500)
