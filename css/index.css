@@ -125,7 +125,7 @@ body { font:12px/1.6 arial;  }
  }
 #menu li { font-family: 'Press Start 2P', cursive;}
 .sk { position: fixed; bottom: 30px; right: 90px; 
-        font-size: 40px; z-index: 9999;
+        font-size: 40px; z-index: 99999;
         animation: skmove 1s infinite;
         background: linear-gradient(to bottom, #fdce3f, #cc6018);
     -webkit-background-clip: text;
@@ -158,7 +158,7 @@ body { font:12px/1.6 arial;  }
 
 .openlist { position:fixed; top:0; right:0; 
     width:0%; overflow:hidden; height:100%; 
-    background-color: #000; z-index:999999;
+    background-color: #000; z-index:9999999;
     transition:all 0.5s; }
 .openlist li:hover { color: #fff;}
 .open.on + .openlist { width:100%; }

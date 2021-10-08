@@ -185,14 +185,14 @@ var linum =0;
 $('#sect4 ul li a').on('click',function(e){
     e.preventDefault()
     linum = $(this).parent().index()
-    var src = $(this).find('img').attr('src')
+    var src1 = $(this).attr('data-src1')
+    var src2 = $(this).attr('data-src2')
+    var src3 = $(this).attr('data-src3')
     var href = $(this).attr('href')
-    var title = $(this).attr('title')
-    var desc = $(this).attr('data-desc')
-    var font =$(this).attr('data-font')
-    var color1 = $(this).attr('data-color1')
-    var color2 = $(this).attr('data-color2')
-    $('body').append('<div class="outlayer"><div class="inlayer"><img src="" alt""><div class="text"><h2></h2><p class="p1"></p><p class="p2"></p><p class="p3"><span></span><span></span></p></div></div></div>')
+    var desc1 = $(this).attr('data-desc1')
+    var desc2 = $(this).attr('data-desc2')
+   
+    $('body').append(`<div class="outlayer"><div class="inlayer"><img src="${src1}" alt"" width="30%"><img src="${src2}" alt"" width="30%" style="margin:0 10px"><img src="${src3}" alt"" width="30%"><div class="text"><h2></h2><p class="p1" style="margin-top:90px">${desc1} </p><p class="p1">${desc2}</p><span></span><span></span></div></div></div>`)
     $('.outlayer').css({
         position:'fixed',
         backgroundColor:'rgba(0,0,0,0.8)',
@@ -203,16 +203,16 @@ $('#sect4 ul li a').on('click',function(e){
         bottom:0
     })
     $('.inlayer').css({
-        position:'relative',
+        position:'absolute', left:'50%',
         top:'50%',
-        transform:'translateY(-50%)',
+        transform:'translate(-50%, -50%)',
         width:'1000px',
         margin:'0 auto',
         textAlign:'center',fontSize:'20px', color:'#fff'
     })
     .append('<button class="close"><i class="fas fa-times-circle"></i></button>')
     .append(`<div><a href="${href}" target="_blank">사이트 이동하기</a></div>`)
-    .append('<button class=" prev"><i class="fas fa-angle-left"></i></button><button class=" next"><i class="fas fa-angle-right"></i></button>'
+    .append('<button class="prev"><i class="fas fa-angle-left"></i></button><button class="next"><i class="fas fa-angle-right"></i></button>'
     )
     $('.inlayer button.close').css({
         border:'none',
@@ -248,10 +248,11 @@ $('#sect4 ul li a').on('click',function(e){
         color:'green',
         margin:'10px 0'
     })
-    $('.inlayer .text .p1').text(desc).css({
-        padding: '10px',
+    $('.inlayer .text .p1').text(desc1).css({
+        padding: '20px',
         fontSize: '14px',
-        marginBottom: '10px'
+        marginBottom: '10px',
+        marginTop:'30px'
     })
     $('.inlayer .text .p2').text(font)
     $('.inlayer .text .p3 span').eq(0).before(color1)
@@ -267,11 +268,6 @@ $('#sect4 ul li a').on('click',function(e){
         margin:'0 0 0 3px'
     })
 
-    $('.inlayer img').attr('src', src).css({
-        width:'50%',
-        verticalAlign:'middle',
-        marginRight:'10px'
-    })
     
 })
 
