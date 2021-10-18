@@ -83,10 +83,10 @@ body { font:12px/1.6 arial;  }
     background-color: rgba(0, 0, 0, 0.5);
 } */
 
-#sns { position:fixed; top:60px; right:150px; z-index:99 }
-#sns li { display:inline-block;  font-size:25px; color:rgba(255, 255, 255); 
+#sns { position:fixed; top:50px; right:150px; z-index:99 }
+#sns li { display:inline-block;  font-size:35px; color:rgba(255, 255, 255); 
     margin-left:15px; transition:all 0.5s }
-#sns li:hover { transform:scale(1.5); 
+#sns li:hover { transform: rotate(1turn);
         background: linear-gradient(to bottom, #fff600, #ff0060,#6c00ff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
@@ -137,14 +137,14 @@ body { font:12px/1.6 arial;  }
         100% {transform: translateX(20px); }
 }
 .open { position:fixed; top:50px; right:50px; 
-    z-index:9999999; width:50px; height:50px;
+    z-index:99999999; width:50px; height:50px;
     border-radius:50%; background-color:#000;
     font-size:25px; color:#fff; 
     text-align:center; line-height:50px; 
     cursor:pointer }
 .open .bar { 
     height:4px; background-color:#fff;
-    border-radius:2px;
+    border-radius:2px; 
     position:absolute; 
     transition:all 0.5s; }
 .open .bar1 { top:12px; width:15px; left:10px }
@@ -194,6 +194,7 @@ section {
         position: absolute; top: 50%; left: 60%; 
         margin-top:-250px; margin-left:-400px; 
         -webkit-perspective: 700px;
+        box-shadow: 10px 10px rgba(0,0,0,0.5);
 }
 #sect2 .mebox .cbtn { position:absolute; font-size:30px; 
         top:100%;  cursor:pointer; 
@@ -263,7 +264,8 @@ section {
         left:300px; right:300px; 
         background:#fff; 
         text-align:center;
-        
+        border-radius: 10px;
+        box-shadow: 10px 10px rgba(0,0,0,0.5);
 }
 #sect3 .skillContainer .myscore { position: absolute; bottom:100%; left: 0; font-size: 18px;
         width: 100%;
@@ -279,14 +281,15 @@ section {
 
 #sect3 .skillContainer > div {  height:80%; display:inline-block; margin:8% 20px 5%;
         background:pink; width:100px; position:relative; 
+        border-radius: 50px;
 }
 #sect3 .skillContainer > div p { position:absolute; bottom:-30px; left:50%; transform: translateX(-50%);  font-size: 18px; }
 #sect3 .skillContainer > div .score { width:100%; position:absolute; bottom:0; left:0;  }
-#sect3 .skillContainer > div.html .score { height:0%; background:red;}
-#sect3 .skillContainer > div.css .score { height:0%; background:green;}
-#sect3 .skillContainer > div.script .score { height:0%; background:blue;}
-#sect3 .skillContainer > div.jquery .score { height:0%; background:orange;}
-#sect3 .skillContainer > div.react .score { height:0%; background:violet;}
+#sect3 .skillContainer > div.html .score { height:0%; background:red;  border-radius:0 0 50px 50px;}
+#sect3 .skillContainer > div.css .score { height:0%; background:green; border-radius:0 0 50px 50px;}
+#sect3 .skillContainer > div.script .score { height:0%; background:blue; border-radius:0 0 50px 50px;}
+#sect3 .skillContainer > div.jquery .score { height:0%; background:orange;border-radius:0 0 50px 50px;}
+#sect3 .skillContainer > div.react .score { height:0%; background:violet;border-radius:0 0 50px 50px;}
 
 /* #sect3 .skillContainer.on > div.html .score { height:80%;  }
 #sect3 .skillContainer.on > div.css .score { height:70%; }
@@ -447,12 +450,12 @@ section {
 #menu { position:fixed; top:50%; transform:translateY(-50%); left:50px; z-index:999; opacity: 0; }
 #menu.on { opacity: 1;}
 #menu li {  margin:10px 0;  }
-#menu li a { display:block; height:20px;  width:20px;
-    border-radius:50%; background-color:red;
-    position:relative 
+#menu li a { display:block; height:10px;  width:10px;
+    border-radius:50%; background-color:#fff;
+    position:relative; margin: 20px 0; 
 }
-#menu li.on a { background-color:blue; transform:scale(1.2) }
-#menu li a span { position:absolute; top:3px; left:30px; 
+#menu li.on a { outline: 5px solid rgba(255, 255, 255, 0.5); transform:scale(1.2); }
+#menu li a span { position:absolute; top:-3px; left:25px; 
     width:100px; display:none; }    
 #menu li.on a span { display:block }
 
