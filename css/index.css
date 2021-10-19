@@ -179,7 +179,7 @@ section {
     background-size:cover; 
     background-repeat:no-repeat;
     background-position:right center;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     position:relative;
     overflow:hidden;
 }
