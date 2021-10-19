@@ -13,6 +13,7 @@ $('#menu li a, .depth1 li a, .openlist li a').on('click focus', function(e){
     $(this).parent().siblings().removeClass('on')
     
     var num = $(this).parent().index()+1
+    clickcount = num
     var secDist = $('section').eq(num).offset().left
     $('html, body').stop().animate({
         scrollLeft : secDist
