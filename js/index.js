@@ -323,6 +323,8 @@ $(window).on("load", function(){
 
 })
 $('#sect4 .category a').on('click',function(){
+    $(this).addClass('on')
+    $(this).siblings().removeClass('on')
     var filterValue = $(this).attr('data-filter')
     $('.grid').isotope({
         filter:filterValue,
