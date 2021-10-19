@@ -74,8 +74,9 @@ html { overflow:hidden  }
 body { font:12px/1.6 arial;  }
 
 #main{ width: 100vW; height: 100vh; 
-    background: url(../img/main2.jpg) no-repeat ;
-    background-size: cover;
+    /* background: url(../img/main2.jpg) no-repeat ; */
+    /* background-size: cover; */
+    background-color: #272515;
     display: flex; justify-content: center; align-items: center;
     font-family: 'Press Start 2P', cursive;
  }
