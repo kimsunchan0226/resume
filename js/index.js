@@ -14,6 +14,8 @@ $('#menu li a, .depth1 li a, .openlist li a').on('click focus', function(e){
     
     var num = $(this).parent().index()+1
     clickcount = num
+    $('section').eq(num).addClass('on')
+    $('section').eq(num).siblings().removeClass('on')
     var secDist = $('section').eq(num).offset().left
     $('html, body').stop().animate({
         scrollLeft : secDist
@@ -47,10 +49,12 @@ $(window).on('scroll', function(){
         $('#menu li').eq(0).siblings().removeClass('on')
         $('#menu').addClass('on')
         $('.sk i').eq(0).show()
+        $('section').eq(1).addClass('on')
     } else if ( sct>=sDist2 && sct<sDist3 && !cflag) {
         $('#menu li').eq(1).addClass('on')
         $('#menu li').eq(1).siblings().removeClass('on')
         $('#menu').addClass('on')
+        $('section').eq(1).siblings().removeClass('on')
     } else if ( sct>=sDist3 && sct<sDist4 && !cflag) {
         $('#menu li').eq(2).addClass('on')
         $('#menu li').eq(2).siblings().removeClass('on')
@@ -320,7 +324,7 @@ $(window).on("load", function(){
    })
 
    
-   $('.lodoing').delay(3000).fadeOut()
+   $('.lodoing').delay(3500).fadeOut()
 
 })
 $('#sect4 .category a').on('click',function(){

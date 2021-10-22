@@ -74,9 +74,9 @@ html { overflow:hidden  }
 body { font:12px/1.6 arial;  }
 
 #main{ width: 100vW; height: 100vh; 
-    /* background: url(../img/시퀀스\ 01.gif) no-repeat  center;
-    background-size: contain; */
-    background-color: #272515; 
+    /* background: url(../img/main2.jpg) no-repeat ; */
+    /* background-size: cover; */
+    background-color: #272515;
     display: flex; justify-content: center; align-items: center;
     font-family: 'Press Start 2P', cursive;
  }
@@ -186,11 +186,18 @@ section {
 
 
 #sect2 { background-image: url(../img/about-me2.jpg);
-        background-position: 400px center;
+        background-position: 200px center;
         /* background-color:#df1d26; */
         background-color: #272515;
-        background-size: auto 45%; 
+        background-size: auto 50%; 
         
+}
+#sect2.on { 
+        animation: sect2ani 3s both;
+}
+@keyframes sect2ani { 
+        0% {  background-position: 200px center;}
+        100% {  background-position: 400px center;}
 }
 
 #sect2 .mebox { width: 750px; height: 485px; background: #fff;
@@ -460,11 +467,7 @@ section {
 }
 
 /* sect6 */
-#sect6 { background-color: #111;
-         background: url(../img/다운로드.gif) no-repeat  center;
-         background-size: cover;
-         color: #000; font-size: 60px; font-family: 'Press Start 2P', cursive; position: relative; text-align: center;
-}
+#sect6 { background-color: #000; color: #fff; font-size: 60px; font-family: 'Press Start 2P', cursive; position: relative; text-align: center;}
 #sect6 a { position: absolute; top: 50%; left: 50%;
         transform: translate(-50%,-50%);
         font-size: 100px;
@@ -505,8 +508,12 @@ article span { font-size:16px; }
         top: 0; left: 0;
         background: #000; z-index: 99999999;
         display: flex; justify-content: center; align-items: center;
+        animation: imgzoom 5s 2.5s;
+        background-position: center;
+        background-size: cover;
+        background-image: url(../img/시퀀스\ 01.gif);
 }
-.lodoing img { animation: imgzoom 10s 1s;}
+/* .lodoing img { animation: imgzoom 5s 4s;} */
 @keyframes imgzoom {
         0% {
                 transform: scale(1);
