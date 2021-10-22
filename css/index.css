@@ -76,6 +76,10 @@ body { font:12px/1.6 arial;  }
 #main{ width: 100vW; height: 100vh; 
     /* background: url(../img/main2.jpg) no-repeat ; */
     /* background-size: cover; */
+    background-image: url(../img/first.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: #272515;
     display: flex; justify-content: center; align-items: center;
     font-family: 'Press Start 2P', cursive;
@@ -185,26 +189,27 @@ section {
 }
 
 
-#sect2 { background-image: url(../img/about-me2.jpg);
-        background-position: 200px center;
+#sect2 { background-image: url(../img/main.gif);
+        background-position: center;
         /* background-color:#df1d26; */
-        background-color: #272515;
-        background-size: auto 50%; 
-        
+        /* background-color: #272515; */
+        /* background-size: auto;  */
+
 }
-#sect2.on { 
+/* #sect2.on { 
         animation: sect2ani 3s both;
 }
 @keyframes sect2ani { 
         0% {  background-position: 200px center;}
         100% {  background-position: 400px center;}
-}
+} */
 
 #sect2 .mebox { width: 750px; height: 485px; background: #fff;
-        position: absolute; top: 50%; left: 60%; 
-        margin-top:-250px; margin-left:-400px; 
+        position: absolute; top: 50%; left: 50%; 
+        /* margin-top:-250px; margin-left:-400px;  */
+        transform: translate(-50%, -50%);
         -webkit-perspective: 700px;
-        box-shadow: 10px 10px rgba(0,0,0,1);
+        box-shadow: 10px 10px rgba(0,0,0,0.6);
 }
 #sect2 .mebox .cbtn { position:absolute; font-size:30px; 
         top:100%;  cursor:pointer; 
@@ -252,8 +257,9 @@ section {
 
 #sect3 {
         background-color: #272515;
-        background-image: url(../img/skill2.jpg);
-        background-size: auto 90%;
+        background-image: url(../img/main.gif);
+        /* background-image: url(../img/skill2.jpg); */
+        /* background-size: auto 90%; */
         /* background-color: #7264b9; */
         /* background-color: #ccc; */
         background-position: center;
@@ -334,9 +340,11 @@ section {
 }
 #sect3 .cbtn:hover { background-color: #9e9c99;}
 
-#sect4 { background-image: url(../img/poto2.jpg);
-        background-size: contain ;
-        background-repeat:no-repeat;
+#sect4 { 
+        background-image: url(../img/main.gif);
+        /* background-image: url(../img/poto2.jpg); */
+        /* background-size: contain ; */
+        /* background-repeat:no-repeat; */
         /* padding-top: 100px; padding-left: 200px; */
         background-color: #272515;
   
@@ -344,9 +352,9 @@ section {
 
 #sect4 .category { font-size: 20px;
          /* 포폴 늘어나면 마진 조정  */
-                margin-left: 250px;
+                margin-left: 380px;
                 margin-bottom: 40px;
-                margin-top: 100px;
+                margin-top: 30px;
                 text-shadow: rgb(184, 181, 181);
 }
 #sect4 .category a.on {
@@ -366,10 +374,10 @@ section {
                 border-bottom: 3px solid transparent;
                 border-top: 3px solid transparent;
 }
-#sect4 ul {overflow: hidden;margin-left: 250px; }
+#sect4 ul {overflow: hidden;margin-left: 380px; }
 #sect4 ul li {
         
-        float: left; width: 18%; margin: 10px 0;
+        float: left; width: 25%; margin: 10px 0;
         margin-right: 2%;
         /* transform: scale(0.5); */
         opacity: 1;
@@ -388,12 +396,13 @@ section {
 
 
 #sect5 {
-        background-image: url(../img/contect2.jpg);  
-        background-size: contain;
-        background-repeat:no-repeat;
+        /* background-image: url(../img/contect2.jpg);   */
+        background-image: url(../img/main.gif);
+        /* background-size: contain; */
+        /* background-repeat:no-repeat; */
         /* background-color: #ace5f8; */
         background-color: #272515;
-        background-position: 1100px -100px;
+        /* background-position: 1100px -100px; */
         position: relative;
         font-weight: bold;
 }
@@ -403,7 +412,7 @@ section {
         background-position: center;
         background-size: contain;
         width: 900px; height: 600px;
-        position: absolute; top: 50%; left: 45%;
+        position: absolute; top: 50%; left: 50%;
         transform: translate(-50%,-50%);
         
 }
@@ -467,7 +476,9 @@ section {
 }
 
 /* sect6 */
-#sect6 { background-color: #000; color: #fff; font-size: 60px; font-family: 'Press Start 2P', cursive; position: relative; text-align: center;}
+#sect6 { background-color: #000; color: #fff; font-size: 60px; font-family: 'Press Start 2P', cursive; position: relative; text-align: center; background-image: url(../img/first.png); background-repeat: no-repeat;
+        background-size: cover;
+}
 #sect6 a { position: absolute; top: 50%; left: 50%;
         transform: translate(-50%,-50%);
         font-size: 100px;
