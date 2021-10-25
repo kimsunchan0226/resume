@@ -217,6 +217,7 @@ section {
         font-size:40px; color:yellow;
         text-shadow: 0px 0px 10px rgb(255, 255, 181); 
         animation: banban 0.5s infinite;
+        font-family: 'Noto Sans KR', sans-serif;
 }
 @keyframes banban {
         0% { text-shadow: 0px 0px 10px rgb(255, 255, 181);}
@@ -295,13 +296,18 @@ section {
         box-shadow: 10px 10px rgba(0,0,0,0.5);
 }
 .tit {
-        font-size: 20px;
+        font-size: 23px;
         margin-top: 50px;
-        margin-bottom: 10px
-    }
-    
+        margin-bottom: 10px;
+        transform: translateY(100px);
+        font-family: 'Noto Sans KR', sans-serif;
+}
+
+.skillContainer {padding-top: 40px;}    
 .container { float:left; width:33.33%; text-align:center; position:relative}
-.pBox { width:180px; height:180px; position:absolute; line-height:180px; }
+.pBox { width:180px; height:180px; position:absolute; line-height:180px;
+        font-size: 23px; font-family: 'Noto Sans KR', sans-serif; margin-top: 10px;
+}
 /* #sect3 .skillContainer .myscore { position: absolute; bottom:100%; left: 0; font-size: 18px;
         width: 100%;
         padding-top: 100px;
@@ -341,6 +347,7 @@ section {
         text-align: center;
         -webkit-animation: heartbeat 1.5s ease-in-out infinite;
         animation: heartbeat 1.5s ease-in-out infinite, banban 1.0s infinite; ;
+        font-family: 'Noto Sans KR', sans-serif;
         
 }
 #sect3 .cbtn:hover { background-color: #000;}

@@ -148,33 +148,29 @@ var arrChartColor = ['#e8670c', '#ff9e5a', '#ff710d', '#7f4f2d', '#cc5b0b', '#cc
             })
         })
 
-        var chartBool = true;
-        $(window).on('scroll', function() {
-                var sct = $(this).scrollTop();
-                var skillTop = $('#skill').offset().top 
-
-                if (sct >= skillTop-60 && sct <= skillTop+60 ) {
-                    if (chartBool) {
-                        $('.skills').each(function(idx, element) {
-                            var num = $(this).attr('data-percent');
-                            $('.skills').eq(idx).data('easyPieChart').disableAnimation().update(0).enableAnimation().update(num);
-                        });
-                        chartBool = false 
-                    }
-
-                } else {
-                    chartBool = true; 
-                }
-            });
-$('#sect3 .cbtn').on('click', function(){
+var chartBool = true;
+$('#sect3 .cbtn').on('click',function(){
     $(this).prev().fadeIn(300)
-    // $('.skillContainer').addClass('on')
-    // count(80, '.html',15)
-    // count(70, '.css',16)
-    // count(60, '.script',17)
-    // count(60, '.jquery',18)
-    // count(50, '.react',19) 
+    $('.skills').each(function(idx, element) {
+        var num = $(this).attr('data-percent');
+        $('.skills').eq(idx).data('easyPieChart').disableAnimation().update(0).enableAnimation().update(num);
+    });
+    chartBool = false;
 })
+       
+
+            
+
+       
+// $('#sect3 .cbtn').on('click', function(){
+//     $(this).prev().fadeIn(300)
+//     // $('.skillContainer').addClass('on')
+//     // count(80, '.html',15)
+//     // count(70, '.css',16)
+//     // count(60, '.script',17)
+//     // count(60, '.jquery',18)
+//     // count(50, '.react',19) 
+// })
 
 $('#sect3 .skillOuter').on('click',function(){
     $(this).fadeOut()
