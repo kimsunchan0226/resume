@@ -17,6 +17,7 @@
 	<script src="./js/prefixfree.min.js"></script>
 	<script src="./js/jquery.mousewheel.min.js"></script>
 	<script src="./js/isotope.pkgd.min.js"></script>
+	<script src="js/jquery.easypiechart.min.js"></script>
 </head>
 <body>
 	
@@ -111,37 +112,27 @@
 		<h2>My Skill</h2> 
 		<div class="skillOuter">
 			<div class="skillContainer">
-				<div class="html">
-					<div class="score">
-						<div class="myscore">0</div>  
-					</div>
-					<p>HTML5</p>
-				</div>
-				<div class="css">
-					<div class="score">
-						<div class="myscore">0</div>
-					</div>
-					<p>CSS3</p>
-				</div>
-				<div class="script">
-					<div class="score">
-						<div class="myscore">0</div>
-					</div>
-					<p>javaScript</p>
-				</div>
-				<div class="jquery">
-					<div class="score">
-						<div class="myscore">0</div>
-					</div>
-					<p>jQuery</p>
-				</div>
-				<div class="react">
-					<div class="score">
-						<div class="myscore">0</div>
-					</div>
-					<p>React</p>
-				</div>
-				<i class="fas fa-times"></i>
+				<div class="container">
+                    <p class="tit">HTML5</p>
+                    <div class="skills html" data-percent="80"><span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                </div>
+				<div class="container">
+                    <p class="tit">CSS3</p>
+                    <div class="skills css" data-percent="70"><span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                </div>
+				<div class="container">
+                    <p class="tit">Script</p>
+                    <div class="skills script" data-percent="60"><span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                </div>
+				<div class="container">
+                    <p class="tit">Jquery</p>
+                    <div class="skills jquery" data-percent="60"><span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                </div>
+				<div class="container">
+                    <p class="tit">React</p>
+                    <div class="skills react" data-percent="50"><span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                </div>
+			<i class="fas fa-times"></i>
 			</div>
 			
 		</div>
@@ -219,7 +210,12 @@
 </div>
 
 <div class="lodoing">
-	<!-- <img src="./img/loding.gif" alt=""> -->
+	<div>
+		<p><i class="fas fa-globe-asia"></i></p>
+		<p><i class="fas fa-globe-europe"></i></p>
+		<p><i class="fas fa-globe-americas"></i></p>
+		<p><i class="fas fa-globe-africa"></i></p>
+	</div>
 </div>
 
 <script src="./js/index.js"></script>

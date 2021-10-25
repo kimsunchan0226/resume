@@ -116,28 +116,64 @@ $('#sect2 .cbtn').on('click', function(){
     }
 })
 // sect3 
-function count(jumsu, cname, time) {
-    let num = 0; 
-    var stop = setInterval(function(){
-        num++;
-        if (num<=jumsu) {
-            $(cname).find('.score').css({ height:num+'%', transition:'all 0s' })
-            $(cname).find('.myscore').text(num+'%')
-        } else {
-            clearInterval(stop)
-            $(cname).find('.score').css({ transition:'all 1s' })
-        }
-    }, time)
-}
+// function count(jumsu, cname, time) {
+//     let num = 0; 
+//     var stop = setInterval(function(){
+//         num++;
+//         if (num<=jumsu) {
+//             $(cname).find('.score').css({ height:num+'%', transition:'all 0s' })
+//             $(cname).find('.myscore').text(num+'%')
+//         } else {
+//             clearInterval(stop)
+//             $(cname).find('.score').css({ transition:'all 1s' })
+//         }
+//     }, time)
+// }
+var arrChartColor = ['#e8670c', '#ff9e5a', '#ff710d', '#7f4f2d', '#cc5b0b', '#cc3a1a'];
+        $('.skills').each(function(idx, el){
+            $(this).easyPieChart({
+                animate: 2000,       // 진행시간
+                easing: 'easeOutBounce', // 속도함수
+                barColor: arrChartColor[idx],   // 채워지는 색상
+                trackColor: '#efefef', // 트색 색상
+                scaleColor: false, // 눈금선 색상
+                lineCap:'butt', // 선의 끝 모양(butt, round, square)
+                lineWidth:20, // 선의 폭
+                size:180, // 원형차트의 크기
+                //onStart:$.noop, // 시작부분에서 호출되는 콜백함수(animate가 false가 아닐때만 작동)
+                //onStop:$.noop, // 끝에서 호출되는 콜백함수(animate가 false가 아닐때만 작동)
+			    onStep: function(from, to, percent) {  // 현재 값을 제공하는 애니메이션 중에 호출되는 콜백 함수
+                    $(this.el).find('.percent').text(Math.round(percent));
+                }
+            })
+        })
 
+        var chartBool = true;
+        $(window).on('scroll', function() {
+                var sct = $(this).scrollTop();
+                var skillTop = $('#skill').offset().top 
+
+                if (sct >= skillTop-60 && sct <= skillTop+60 ) {
+                    if (chartBool) {
+                        $('.skills').each(function(idx, element) {
+                            var num = $(this).attr('data-percent');
+                            $('.skills').eq(idx).data('easyPieChart').disableAnimation().update(0).enableAnimation().update(num);
+                        });
+                        chartBool = false 
+                    }
+
+                } else {
+                    chartBool = true; 
+                }
+            });
 $('#sect3 .cbtn').on('click', function(){
     $(this).prev().fadeIn(300)
-    $('.skillContainer').addClass('on')
-    count(80, '.html',15)
-    count(70, '.css',16)
-    count(50, '.script',17)
-    count(40, '.jquery',18)
-    count(60, '.react',19) 
+    // $('.skillContainer').addClass('on')
+    // count(80, '.html',15)
+    // count(70, '.css',16)
+    // count(60, '.script',17)
+    // count(60, '.jquery',18)
+    // count(50, '.react',19) 
 })
 
 $('#sect3 .skillOuter').on('click',function(){
@@ -323,8 +359,18 @@ $(window).on("load", function(){
        itemSelector:'.all',
    })
 
-   
-   $('.lodoing').delay(3500).fadeOut()
+   $('.lodoing p').eq(0).stop().animate({opacity:1}, 400)
+   $('.lodoing p').eq(1).stop().animate({opacity:1}, 1800)
+   $('.lodoing p').eq(2).stop().animate({opacity:1}, 2900)
+   $('.lodoing p').eq(3).stop().animate({opacity:1}, 4000, function(){
+        $('.lodoing > div p').animate({
+            margin:'0 -120px'
+        },500, function(){
+            $(this).addClass('on')
+        })
+   })
+
+    $('.lodoing').delay(5000).fadeOut()
 
 })
 $('#sect4 .category a').on('click',function(){
