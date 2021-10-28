@@ -1,3 +1,27 @@
+// isotope 플러그인 연결 (갤러리필터링)
+$(window).on("load", function(){
+    // skroll.recalcPosition();
+
+    $(".grid").isotope({
+       filter:"*",
+       layoutMode:'masonry', // fitRows, masonry
+       itemSelector:'.all',
+   })
+
+   $('.lodoing p').eq(0).stop().animate({opacity:1}, 400)
+   $('.lodoing p').eq(1).stop().animate({opacity:1}, 1800)
+   $('.lodoing p').eq(2).stop().animate({opacity:1}, 2900)
+   $('.lodoing p').eq(3).stop().animate({opacity:1}, 4000, function(){
+        $('.lodoing > div p').animate({
+            margin:'0 -120px'
+        },500, function(){
+            $(this).addClass('on')
+        })
+   })
+
+    $('.lodoing').delay(5000).fadeOut()
+
+})
 $('html, body').stop().animate({
     scrollLeft : 0
 }, 1000)
@@ -345,30 +369,7 @@ $('body').on('click','.inlayer .prev',function(e){
     }
    gallery(linum)
 })
-// isotope 플러그인 연결 (갤러리필터링)
-$(window).on("load", function(){
-    // skroll.recalcPosition();
 
-    $(".grid").isotope({
-       filter:"*",
-       layoutMode:'masonry', // fitRows, masonry
-       itemSelector:'.all',
-   })
-
-   $('.lodoing p').eq(0).stop().animate({opacity:1}, 400)
-   $('.lodoing p').eq(1).stop().animate({opacity:1}, 1800)
-   $('.lodoing p').eq(2).stop().animate({opacity:1}, 2900)
-   $('.lodoing p').eq(3).stop().animate({opacity:1}, 4000, function(){
-        $('.lodoing > div p').animate({
-            margin:'0 -120px'
-        },500, function(){
-            $(this).addClass('on')
-        })
-   })
-
-    $('.lodoing').delay(5000).fadeOut()
-
-})
 $('#sect4 .category a').on('click',function(){
     $(this).addClass('on')
     $(this).siblings().removeClass('on')
