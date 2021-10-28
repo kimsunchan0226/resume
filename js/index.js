@@ -273,8 +273,7 @@ $('#sect4 ul li a').on('click',function(e){
     })
     .append('<button class="close"><i class="fas fa-times-circle"></i></button>')
     .append(`<div><a href="${href}" target="_blank">사이트 이동하기</a></div>`)
-    .append('<button class="prev"><i class="fas fa-angle-left"></i></button><button class="next"><i class="fas fa-angle-right"></i></button>'
-    )
+    .append('<button class="prev"><i class="fas fa-angle-left"></i></button><button class="next"><i class="fas fa-angle-right"></i></button>')
     $('.inlayer button.close').css({
         border:'none',
         position:'absolute',
