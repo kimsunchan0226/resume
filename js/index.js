@@ -8,10 +8,10 @@ $(window).on("load", function(){
        itemSelector:'.all',
    })
 
-   $('.lodoing p').eq(0).stop().animate({opacity:1}, 400)
-   $('.lodoing p').eq(1).stop().animate({opacity:1}, 1800)
-   $('.lodoing p').eq(2).stop().animate({opacity:1}, 2900)
-   $('.lodoing p').eq(3).stop().animate({opacity:1}, 4000, function(){
+   $('.lodoing p').eq(0).animate({opacity:1}, 400)
+   $('.lodoing p').eq(1).animate({opacity:1}, 1800)
+   $('.lodoing p').eq(2).animate({opacity:1}, 2900)
+   $('.lodoing p').eq(3).animate({opacity:1}, 4000, function(){
         $('.lodoing > div p').animate({
             margin:'0 -120px'
         },500, function(){
