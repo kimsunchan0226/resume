@@ -103,14 +103,14 @@ body { font:12px/1.6 arial;  }
 }
 /* .nav .depth1 li a:hover { color: #fff; z-index: 99999;} */
 .nav .depth1 li { float: left;
-        background: linear-gradient(to bottom, #fdce3f, #cc6018);
+        background-image: linear-gradient(to bottom, #fdce3f, #cc6018);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
      padding: 40px 30px; transition: all 0.5s; 
      
 }
 .nav .depth1 li:hover { float: left;
-        background: linear-gradient(to bottom, #fff, #fff);
+        background-image: linear-gradient(to bottom, #fff, #fff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
      padding: 40px 30px; transition: all 0.5s; 
@@ -123,7 +123,7 @@ body { font:12px/1.6 arial;  }
     position: relative;
     -webkit-animation: heartbeat 1.5s ease-in-out infinite;
     animation: heartbeat 1.5s ease-in-out infinite ;
-    background: linear-gradient(to bottom, #fdce3f, #cc6018);
+   background-image: linear-gradient(to bottom, #fdce3f, #cc6018);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -132,7 +132,7 @@ body { font:12px/1.6 arial;  }
 .sk { position: fixed; bottom: 30px; right: 90px; 
         font-size: 40px; z-index: 99999;
         animation: skmove 1s 2;
-        background: linear-gradient(to bottom, #fdce3f, #cc6018);
+        background-image: linear-gradient(to bottom, #fdce3f, #cc6018);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
