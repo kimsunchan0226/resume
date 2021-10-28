@@ -131,7 +131,7 @@ body { font:12px/1.6 arial;  }
 #menu li { font-family: 'Press Start 2P', cursive;}
 .sk { position: fixed; bottom: 30px; right: 90px; 
         font-size: 40px; z-index: 99999;
-        animation: skmove 1s infinite;
+        animation: skmove 1s 2;
         background: linear-gradient(to bottom, #fdce3f, #cc6018);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
