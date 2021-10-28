@@ -253,7 +253,8 @@ $('#sect4 ul li a').on('click',function(e){
     var desc1 = $(this).attr('data-desc1')
     var desc2 = $(this).attr('data-desc2')
    
-    $('body').append(`<div class="outlayer"><div class="inlayer"><img src="${src1}" alt="" style="width:30%"><img src="${src2}" alt="" style="width:30%" style="margin:0 10px"><img src="${src3}" alt="" style="width:30%"><div class="text"><h2></h2><p class="p1" style="margin-top:90px">${desc1} </p><p class="p1">${desc2}</p><span></span><span></span></div></div></div>`)
+ var layor = `<div class="outlayer"><div class="inlayer"><img src="${src1}" alt="" style="width:30%"><img src="${src2}" alt="" style="width:30%" style="margin:0 10px"><img src="${src3}" alt="" style="width:30%"><div class="text"><h2></h2><p class="p1" style="margin-top:90px">${desc1} </p><p class="p1">${desc2}</p><span></span><span></span></div></div></div>`
+    $('body').append(layor)
     $('.outlayer').css({
         position:'fixed',
         backgroundColor:'rgba(0,0,0,0.8)',
@@ -271,8 +272,9 @@ $('#sect4 ul li a').on('click',function(e){
         margin:'0 auto',
         textAlign:'center',fontSize:'20px', color:'#fff'
     })
+    var bad = `<div><a href="${href}" target="_blank">사이트 이동하기</a></div>`
     .append('<button class="close"><i class="fas fa-times-circle"></i></button>')
-    .append(`<div><a href="${href}" target="_blank">사이트 이동하기</a></div>`)
+    .append(bad)
     .append('<button class="prev"><i class="fas fa-angle-left"></i></button><button class="next"><i class="fas fa-angle-right"></i></button>')
     $('.inlayer button.close').css({
         border:'none',
