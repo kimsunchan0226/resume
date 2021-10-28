@@ -229,7 +229,7 @@ $('#sect4 ul li a').on('click',function(e){
     var desc1 = $(this).attr('data-desc1')
     var desc2 = $(this).attr('data-desc2')
    
-    $('body').append(`<div class="outlayer"><div class="inlayer"><img src="${src1}" alt"" width="30%"><img src="${src2}" alt"" width="30%" style="margin:0 10px"><img src="${src3}" alt"" width="30%"><div class="text"><h2></h2><p class="p1" style="margin-top:90px">${desc1} </p><p class="p1">${desc2}</p><span></span><span></span></div></div></div>`)
+    $('body').append(`<div class="outlayer"><div class="inlayer"><img src="${src1}" alt="" width="30%"><img src="${src2}" alt="" width="30%" style="margin:0 10px"><img src="${src3}" alt="" width="30%"><div class="text"><h2></h2><p class="p1" style="margin-top:90px">${desc1} </p><p class="p1">${desc2}</p><span></span><span></span></div></div></div>`)
     $('.outlayer').css({
         position:'fixed',
         backgroundColor:'rgba(0,0,0,0.8)',
